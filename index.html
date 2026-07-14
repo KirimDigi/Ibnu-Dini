@@ -1530,7 +1530,7 @@
 											href="index-1-1.htm?post_id=67714&comments=1&get=500&order=DESC"
 											id="saic-link-67714">
 											<i class="saico-comment"></i>
-											<span>1</span>
+											<span>0</span>
 											Ucapan </a>
 									</div>
 									<div class="saic-wrap-comments" data-id="67714" id="saic-wrap-comment-67714"
@@ -2753,6 +2753,12 @@
 			// Sort comments by timestamp desc (newest first)
 			var sorted = [...localComments].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
+			// Update total comments counter
+			var link_show_comments = jQuery("#saic-link-" + post_id);
+			if (link_show_comments.find("span").length) {
+				link_show_comments.find("span").html(sorted.length);
+			}
+
 			if (sorted.length === 0) {
 				$container_comments.html('<li style="text-align:center; padding:20px; list-style:none;">Belum ada ucapan.</li>');
 				return;
@@ -2800,12 +2806,6 @@
 			});
 
 			$container_comments.html(html).show();
-
-			// Update total comments counter
-			var link_show_comments = jQuery("#saic-link-" + post_id);
-			if (link_show_comments.find("span").length) {
-				link_show_comments.find("span").html(sorted.length);
-			}
 
 			if (typeof jPages_SAIC === "function") {
 				jPages_SAIC(post_id, WDS_RSVP.jPagesNum);
