@@ -10,13 +10,32 @@
 		.cui-comment-text img {
 			max-width: 100% !important;
 		}
-		.elementor-element-c8259c1 img {
+		
+		/* Fix cover image rendering and stretching on iOS Safari */
+		body .elementor-24775 .elementor-element.elementor-element-c8259c1 {
 			width: 60vw !important;
 			max-width: 240px !important;
+			margin: 0 auto !important;
+			display: flex !important;
+			justify-content: center !important;
+		}
+		body .elementor-24775 .elementor-element.elementor-element-c8259c1 .elementor-widget-container {
+			width: 100% !important;
 			height: auto !important;
 			aspect-ratio: 2 / 3 !important;
+			border-radius: 120px !important;
+			overflow: hidden !important;
+			display: block !important;
+			border-bottom: 3px solid #6D6E71 !important;
+			-webkit-mask-image: -webkit-radial-gradient(white, black);
+			transform: translateZ(0);
+			-webkit-transform: translateZ(0);
+		}
+		body .elementor-24775 .elementor-element.elementor-element-c8259c1 img {
+			width: 100% !important;
+			height: 100% !important;
 			object-fit: cover !important;
-			border-radius: 300px !important;
+			border-radius: 0px !important;
 		}
 	</style>
 	<!-- Optimasi Mesin Pencari oleh Rank Math - https://rankmath.com/ -->
