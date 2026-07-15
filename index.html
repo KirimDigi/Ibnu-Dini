@@ -17,7 +17,7 @@
 		/* Fix cover image rendering and stretching on iOS Safari */
 		body .elementor-24775 .elementor-element.elementor-element-c8259c1,
 		body .elementor-24775 .elementor-element.elementor-element-2f811d8 {
-			width: 220px !important;
+			width: 150px !important;
 			margin: 0 auto !important;
 			display: flex !important;
 			justify-content: center !important;
@@ -27,8 +27,8 @@
 		body .elementor-24775 .elementor-element.elementor-element-2f811d8 .elementor-widget-container {
 			width: 100% !important;
 			height: auto !important;
-			aspect-ratio: 1 / 1 !important;
-			border-radius: 50% !important;
+			aspect-ratio: 2 / 3 !important;
+			border-radius: 100px !important;
 			overflow: hidden !important;
 			display: block !important;
 			border-bottom: 3px solid #6D6E71 !important;
@@ -1895,7 +1895,7 @@
 										if (hashParams.has('dear')) return hashParams.get('dear');
 										if (hashParams.has('kepada')) return hashParams.get('kepada');
 
-										if (hashQuery.indexOf('=') === -1) {
+										if (hashQuery.indexOf('=') === -1 && hashQuery.toLowerCase() !== 'cover') {
 											return decodeURIComponent(hashQuery);
 										}
 									}
